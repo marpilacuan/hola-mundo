@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewAplicacionesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewAplicacionesLabel_idAplicacion}"/>
+                    <h:outputText value="#{aplicacionesController.selected.idAplicacion}" title="#{bundle.ViewAplicacionesTitle_idAplicacion}"/>
+                    <h:outputText value="#{bundle.ViewAplicacionesLabel_nombreAplicacion}"/>
+                    <h:outputText value="#{aplicacionesController.selected.nombreAplicacion}" title="#{bundle.ViewAplicacionesTitle_nombreAplicacion}"/>
+                    <h:outputText value="#{bundle.ViewAplicacionesLabel_descripcion}"/>
+                    <h:outputText value="#{aplicacionesController.selected.descripcion}" title="#{bundle.ViewAplicacionesTitle_descripcion}"/>
+                    <h:outputText value="#{bundle.ViewAplicacionesLabel_activo}"/>
+                    <h:outputText value="#{aplicacionesController.selected.activo}" title="#{bundle.ViewAplicacionesTitle_activo}"/>
+                    <h:outputText value="#{bundle.ViewAplicacionesLabel_url}"/>
+                    <h:outputText value="#{aplicacionesController.selected.url}" title="#{bundle.ViewAplicacionesTitle_url}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{aplicacionesController.destroyAndView}" value="#{bundle.ViewAplicacionesDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewAplicacionesEditLink}"/>
+                <br />
+                <h:commandLink action="#{aplicacionesController.prepareCreate}" value="#{bundle.ViewAplicacionesCreateLink}" />
+                <br />
+                <h:commandLink action="#{aplicacionesController.prepareList}" value="#{bundle.ViewAplicacionesShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewAplicacionesIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

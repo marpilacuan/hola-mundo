@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditUsuariosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_idUsuario}" for="idUsuario" />
+                    <h:inputText id="idUsuario" value="#{usuariosController.selected.idUsuario}" title="#{bundle.EditUsuariosTitle_idUsuario}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_idUsuario}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_usuarioLogin}" for="usuarioLogin" />
+                    <h:inputText id="usuarioLogin" value="#{usuariosController.selected.usuarioLogin}" title="#{bundle.EditUsuariosTitle_usuarioLogin}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_usuarioLogin}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_contrasena}" for="contrasena" />
+                    <h:inputText id="contrasena" value="#{usuariosController.selected.contrasena}" title="#{bundle.EditUsuariosTitle_contrasena}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_contrasena}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_apellidos}" for="apellidos" />
+                    <h:inputText id="apellidos" value="#{usuariosController.selected.apellidos}" title="#{bundle.EditUsuariosTitle_apellidos}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_apellidos}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_nombres}" for="nombres" />
+                    <h:inputText id="nombres" value="#{usuariosController.selected.nombres}" title="#{bundle.EditUsuariosTitle_nombres}" />
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_tipoUsuario}" for="tipoUsuario" />
+                    <h:inputText id="tipoUsuario" value="#{usuariosController.selected.tipoUsuario}" title="#{bundle.EditUsuariosTitle_tipoUsuario}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_tipoUsuario}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_bloqueado}" for="bloqueado" />
+                    <h:inputText id="bloqueado" value="#{usuariosController.selected.bloqueado}" title="#{bundle.EditUsuariosTitle_bloqueado}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_bloqueado}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_activo}" for="activo" />
+                    <h:inputText id="activo" value="#{usuariosController.selected.activo}" title="#{bundle.EditUsuariosTitle_activo}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_activo}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_usuario}" for="usuario" />
+                    <h:inputText id="usuario" value="#{usuariosController.selected.usuario}" title="#{bundle.EditUsuariosTitle_usuario}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_usuario}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_fechaEvento}" for="fechaEvento" />
+                    <h:inputText id="fechaEvento" value="#{usuariosController.selected.fechaEvento}" title="#{bundle.EditUsuariosTitle_fechaEvento}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_fechaEvento}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_correo}" for="correo" />
+                    <h:inputText id="correo" value="#{usuariosController.selected.correo}" title="#{bundle.EditUsuariosTitle_correo}" required="true" requiredMessage="#{bundle.EditUsuariosRequiredMessage_correo}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_codigoActorSicohi}" for="codigoActorSicohi" />
+                    <h:inputText id="codigoActorSicohi" value="#{usuariosController.selected.codigoActorSicohi}" title="#{bundle.EditUsuariosTitle_codigoActorSicohi}" />
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_rucActorSicohi}" for="rucActorSicohi" />
+                    <h:inputText id="rucActorSicohi" value="#{usuariosController.selected.rucActorSicohi}" title="#{bundle.EditUsuariosTitle_rucActorSicohi}" />
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_nombreEmpresaSicohi}" for="nombreEmpresaSicohi" />
+                    <h:inputText id="nombreEmpresaSicohi" value="#{usuariosController.selected.nombreEmpresaSicohi}" title="#{bundle.EditUsuariosTitle_nombreEmpresaSicohi}" />
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_regional}" for="regional" />
+                    <h:inputText id="regional" value="#{usuariosController.selected.regional}" title="#{bundle.EditUsuariosTitle_regional}" />
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_correoAdicional}" for="correoAdicional" />
+                    <h:inputText id="correoAdicional" value="#{usuariosController.selected.correoAdicional}" title="#{bundle.EditUsuariosTitle_correoAdicional}" />
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_tipoIdentif}" for="tipoIdentif" />
+                    <h:inputText id="tipoIdentif" value="#{usuariosController.selected.tipoIdentif}" title="#{bundle.EditUsuariosTitle_tipoIdentif}" />
+                    <h:outputLabel value="#{bundle.EditUsuariosLabel_idArea}" for="idArea" />
+                    <h:selectOneMenu id="idArea" value="#{usuariosController.selected.idArea}" title="#{bundle.EditUsuariosTitle_idArea}" >
+                        <f:selectItems value="#{areaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{usuariosController.update}" value="#{bundle.EditUsuariosSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditUsuariosViewLink}"/>
+                <br />
+                <h:commandLink action="#{usuariosController.prepareList}" value="#{bundle.EditUsuariosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditUsuariosIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

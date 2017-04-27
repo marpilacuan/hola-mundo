@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewUsuariosTestTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_idUsuario}"/>
+                    <h:outputText value="#{usuariosTestController.selected.idUsuario}" title="#{bundle.ViewUsuariosTestTitle_idUsuario}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_usuarioLogin}"/>
+                    <h:outputText value="#{usuariosTestController.selected.usuarioLogin}" title="#{bundle.ViewUsuariosTestTitle_usuarioLogin}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_contrasena}"/>
+                    <h:outputText value="#{usuariosTestController.selected.contrasena}" title="#{bundle.ViewUsuariosTestTitle_contrasena}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_apellidos}"/>
+                    <h:outputText value="#{usuariosTestController.selected.apellidos}" title="#{bundle.ViewUsuariosTestTitle_apellidos}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_nombres}"/>
+                    <h:outputText value="#{usuariosTestController.selected.nombres}" title="#{bundle.ViewUsuariosTestTitle_nombres}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_tipoUsuario}"/>
+                    <h:outputText value="#{usuariosTestController.selected.tipoUsuario}" title="#{bundle.ViewUsuariosTestTitle_tipoUsuario}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_bloqueado}"/>
+                    <h:outputText value="#{usuariosTestController.selected.bloqueado}" title="#{bundle.ViewUsuariosTestTitle_bloqueado}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_activo}"/>
+                    <h:outputText value="#{usuariosTestController.selected.activo}" title="#{bundle.ViewUsuariosTestTitle_activo}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_usuario}"/>
+                    <h:outputText value="#{usuariosTestController.selected.usuario}" title="#{bundle.ViewUsuariosTestTitle_usuario}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_fechaEvento}"/>
+                    <h:outputText value="#{usuariosTestController.selected.fechaEvento}" title="#{bundle.ViewUsuariosTestTitle_fechaEvento}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_correo}"/>
+                    <h:outputText value="#{usuariosTestController.selected.correo}" title="#{bundle.ViewUsuariosTestTitle_correo}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_codigoActorSicohi}"/>
+                    <h:outputText value="#{usuariosTestController.selected.codigoActorSicohi}" title="#{bundle.ViewUsuariosTestTitle_codigoActorSicohi}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_rucActorSicohi}"/>
+                    <h:outputText value="#{usuariosTestController.selected.rucActorSicohi}" title="#{bundle.ViewUsuariosTestTitle_rucActorSicohi}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_nombreEmpresaSicohi}"/>
+                    <h:outputText value="#{usuariosTestController.selected.nombreEmpresaSicohi}" title="#{bundle.ViewUsuariosTestTitle_nombreEmpresaSicohi}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_regional}"/>
+                    <h:outputText value="#{usuariosTestController.selected.regional}" title="#{bundle.ViewUsuariosTestTitle_regional}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_correoAdicional}"/>
+                    <h:outputText value="#{usuariosTestController.selected.correoAdicional}" title="#{bundle.ViewUsuariosTestTitle_correoAdicional}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_tipoIdentif}"/>
+                    <h:outputText value="#{usuariosTestController.selected.tipoIdentif}" title="#{bundle.ViewUsuariosTestTitle_tipoIdentif}"/>
+                    <h:outputText value="#{bundle.ViewUsuariosTestLabel_idArea}"/>
+                    <h:outputText value="#{usuariosTestController.selected.idArea}" title="#{bundle.ViewUsuariosTestTitle_idArea}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{usuariosTestController.destroyAndView}" value="#{bundle.ViewUsuariosTestDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewUsuariosTestEditLink}"/>
+                <br />
+                <h:commandLink action="#{usuariosTestController.prepareCreate}" value="#{bundle.ViewUsuariosTestCreateLink}" />
+                <br />
+                <h:commandLink action="#{usuariosTestController.prepareList}" value="#{bundle.ViewUsuariosTestShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewUsuariosTestIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

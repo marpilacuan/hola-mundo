@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditUsuariosTestTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_idUsuario}" for="idUsuario" />
+                    <h:inputText id="idUsuario" value="#{usuariosTestController.selected.idUsuario}" title="#{bundle.EditUsuariosTestTitle_idUsuario}" required="true" requiredMessage="#{bundle.EditUsuariosTestRequiredMessage_idUsuario}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_usuarioLogin}" for="usuarioLogin" />
+                    <h:inputText id="usuarioLogin" value="#{usuariosTestController.selected.usuarioLogin}" title="#{bundle.EditUsuariosTestTitle_usuarioLogin}" required="true" requiredMessage="#{bundle.EditUsuariosTestRequiredMessage_usuarioLogin}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_contrasena}" for="contrasena" />
+                    <h:inputText id="contrasena" value="#{usuariosTestController.selected.contrasena}" title="#{bundle.EditUsuariosTestTitle_contrasena}" required="true" requiredMessage="#{bundle.EditUsuariosTestRequiredMessage_contrasena}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_apellidos}" for="apellidos" />
+                    <h:inputText id="apellidos" value="#{usuariosTestController.selected.apellidos}" title="#{bundle.EditUsuariosTestTitle_apellidos}" required="true" requiredMessage="#{bundle.EditUsuariosTestRequiredMessage_apellidos}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_nombres}" for="nombres" />
+                    <h:inputText id="nombres" value="#{usuariosTestController.selected.nombres}" title="#{bundle.EditUsuariosTestTitle_nombres}" required="true" requiredMessage="#{bundle.EditUsuariosTestRequiredMessage_nombres}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_tipoUsuario}" for="tipoUsuario" />
+                    <h:inputText id="tipoUsuario" value="#{usuariosTestController.selected.tipoUsuario}" title="#{bundle.EditUsuariosTestTitle_tipoUsuario}" required="true" requiredMessage="#{bundle.EditUsuariosTestRequiredMessage_tipoUsuario}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_bloqueado}" for="bloqueado" />
+                    <h:inputText id="bloqueado" value="#{usuariosTestController.selected.bloqueado}" title="#{bundle.EditUsuariosTestTitle_bloqueado}" required="true" requiredMessage="#{bundle.EditUsuariosTestRequiredMessage_bloqueado}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_activo}" for="activo" />
+                    <h:inputText id="activo" value="#{usuariosTestController.selected.activo}" title="#{bundle.EditUsuariosTestTitle_activo}" required="true" requiredMessage="#{bundle.EditUsuariosTestRequiredMessage_activo}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_usuario}" for="usuario" />
+                    <h:inputText id="usuario" value="#{usuariosTestController.selected.usuario}" title="#{bundle.EditUsuariosTestTitle_usuario}" required="true" requiredMessage="#{bundle.EditUsuariosTestRequiredMessage_usuario}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_fechaEvento}" for="fechaEvento" />
+                    <h:inputText id="fechaEvento" value="#{usuariosTestController.selected.fechaEvento}" title="#{bundle.EditUsuariosTestTitle_fechaEvento}" required="true" requiredMessage="#{bundle.EditUsuariosTestRequiredMessage_fechaEvento}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_correo}" for="correo" />
+                    <h:inputText id="correo" value="#{usuariosTestController.selected.correo}" title="#{bundle.EditUsuariosTestTitle_correo}" required="true" requiredMessage="#{bundle.EditUsuariosTestRequiredMessage_correo}"/>
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_codigoActorSicohi}" for="codigoActorSicohi" />
+                    <h:inputText id="codigoActorSicohi" value="#{usuariosTestController.selected.codigoActorSicohi}" title="#{bundle.EditUsuariosTestTitle_codigoActorSicohi}" />
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_rucActorSicohi}" for="rucActorSicohi" />
+                    <h:inputText id="rucActorSicohi" value="#{usuariosTestController.selected.rucActorSicohi}" title="#{bundle.EditUsuariosTestTitle_rucActorSicohi}" />
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_nombreEmpresaSicohi}" for="nombreEmpresaSicohi" />
+                    <h:inputText id="nombreEmpresaSicohi" value="#{usuariosTestController.selected.nombreEmpresaSicohi}" title="#{bundle.EditUsuariosTestTitle_nombreEmpresaSicohi}" />
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_regional}" for="regional" />
+                    <h:inputText id="regional" value="#{usuariosTestController.selected.regional}" title="#{bundle.EditUsuariosTestTitle_regional}" />
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_correoAdicional}" for="correoAdicional" />
+                    <h:inputText id="correoAdicional" value="#{usuariosTestController.selected.correoAdicional}" title="#{bundle.EditUsuariosTestTitle_correoAdicional}" />
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_tipoIdentif}" for="tipoIdentif" />
+                    <h:inputText id="tipoIdentif" value="#{usuariosTestController.selected.tipoIdentif}" title="#{bundle.EditUsuariosTestTitle_tipoIdentif}" />
+                    <h:outputLabel value="#{bundle.EditUsuariosTestLabel_idArea}" for="idArea" />
+                    <h:selectOneMenu id="idArea" value="#{usuariosTestController.selected.idArea}" title="#{bundle.EditUsuariosTestTitle_idArea}" >
+                        <f:selectItems value="#{areaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{usuariosTestController.update}" value="#{bundle.EditUsuariosTestSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditUsuariosTestViewLink}"/>
+                <br />
+                <h:commandLink action="#{usuariosTestController.prepareList}" value="#{bundle.EditUsuariosTestShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditUsuariosTestIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

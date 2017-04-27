@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateVwUsuariosPerfilesActivosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateVwUsuariosPerfilesActivosLabel_idUsuario}" for="idUsuario" />
+                    <h:inputText id="idUsuario" value="#{vwUsuariosPerfilesActivosController.selected.idUsuario}" title="#{bundle.CreateVwUsuariosPerfilesActivosTitle_idUsuario}" required="true" requiredMessage="#{bundle.CreateVwUsuariosPerfilesActivosRequiredMessage_idUsuario}"/>
+                    <h:outputLabel value="#{bundle.CreateVwUsuariosPerfilesActivosLabel_usuarioLogin}" for="usuarioLogin" />
+                    <h:inputText id="usuarioLogin" value="#{vwUsuariosPerfilesActivosController.selected.usuarioLogin}" title="#{bundle.CreateVwUsuariosPerfilesActivosTitle_usuarioLogin}" required="true" requiredMessage="#{bundle.CreateVwUsuariosPerfilesActivosRequiredMessage_usuarioLogin}"/>
+                    <h:outputLabel value="#{bundle.CreateVwUsuariosPerfilesActivosLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{vwUsuariosPerfilesActivosController.selected.nombre}" title="#{bundle.CreateVwUsuariosPerfilesActivosTitle_nombre}" />
+                    <h:outputLabel value="#{bundle.CreateVwUsuariosPerfilesActivosLabel_correo}" for="correo" />
+                    <h:inputText id="correo" value="#{vwUsuariosPerfilesActivosController.selected.correo}" title="#{bundle.CreateVwUsuariosPerfilesActivosTitle_correo}" required="true" requiredMessage="#{bundle.CreateVwUsuariosPerfilesActivosRequiredMessage_correo}"/>
+                    <h:outputLabel value="#{bundle.CreateVwUsuariosPerfilesActivosLabel_rdhCodigo}" for="rdhCodigo" />
+                    <h:inputText id="rdhCodigo" value="#{vwUsuariosPerfilesActivosController.selected.rdhCodigo}" title="#{bundle.CreateVwUsuariosPerfilesActivosTitle_rdhCodigo}" required="true" requiredMessage="#{bundle.CreateVwUsuariosPerfilesActivosRequiredMessage_rdhCodigo}"/>
+                    <h:outputLabel value="#{bundle.CreateVwUsuariosPerfilesActivosLabel_regional}" for="regional" />
+                    <h:inputText id="regional" value="#{vwUsuariosPerfilesActivosController.selected.regional}" title="#{bundle.CreateVwUsuariosPerfilesActivosTitle_regional}" />
+                    <h:outputLabel value="#{bundle.CreateVwUsuariosPerfilesActivosLabel_idArea}" for="idArea" />
+                    <h:inputText id="idArea" value="#{vwUsuariosPerfilesActivosController.selected.idArea}" title="#{bundle.CreateVwUsuariosPerfilesActivosTitle_idArea}" />
+                    <h:outputLabel value="#{bundle.CreateVwUsuariosPerfilesActivosLabel_area}" for="area" />
+                    <h:inputText id="area" value="#{vwUsuariosPerfilesActivosController.selected.area}" title="#{bundle.CreateVwUsuariosPerfilesActivosTitle_area}" />
+                    <h:outputLabel value="#{bundle.CreateVwUsuariosPerfilesActivosLabel_idPerfil}" for="idPerfil" />
+                    <h:inputText id="idPerfil" value="#{vwUsuariosPerfilesActivosController.selected.idPerfil}" title="#{bundle.CreateVwUsuariosPerfilesActivosTitle_idPerfil}" required="true" requiredMessage="#{bundle.CreateVwUsuariosPerfilesActivosRequiredMessage_idPerfil}"/>
+                    <h:outputLabel value="#{bundle.CreateVwUsuariosPerfilesActivosLabel_perfil}" for="perfil" />
+                    <h:inputText id="perfil" value="#{vwUsuariosPerfilesActivosController.selected.perfil}" title="#{bundle.CreateVwUsuariosPerfilesActivosTitle_perfil}" />
+                    <h:outputLabel value="#{bundle.CreateVwUsuariosPerfilesActivosLabel_idAplicacion}" for="idAplicacion" />
+                    <h:inputText id="idAplicacion" value="#{vwUsuariosPerfilesActivosController.selected.idAplicacion}" title="#{bundle.CreateVwUsuariosPerfilesActivosTitle_idAplicacion}" required="true" requiredMessage="#{bundle.CreateVwUsuariosPerfilesActivosRequiredMessage_idAplicacion}"/>
+                    <h:outputLabel value="#{bundle.CreateVwUsuariosPerfilesActivosLabel_aplicacion}" for="aplicacion" />
+                    <h:inputText id="aplicacion" value="#{vwUsuariosPerfilesActivosController.selected.aplicacion}" title="#{bundle.CreateVwUsuariosPerfilesActivosTitle_aplicacion}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{vwUsuariosPerfilesActivosController.create}" value="#{bundle.CreateVwUsuariosPerfilesActivosSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{vwUsuariosPerfilesActivosController.prepareList}" value="#{bundle.CreateVwUsuariosPerfilesActivosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateVwUsuariosPerfilesActivosIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

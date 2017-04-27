@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewPerfilesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewPerfilesLabel_idPerfil}"/>
+                    <h:outputText value="#{perfilesController.selected.idPerfil}" title="#{bundle.ViewPerfilesTitle_idPerfil}"/>
+                    <h:outputText value="#{bundle.ViewPerfilesLabel_descripcion}"/>
+                    <h:outputText value="#{perfilesController.selected.descripcion}" title="#{bundle.ViewPerfilesTitle_descripcion}"/>
+                    <h:outputText value="#{bundle.ViewPerfilesLabel_activo}"/>
+                    <h:outputText value="#{perfilesController.selected.activo}" title="#{bundle.ViewPerfilesTitle_activo}"/>
+                    <h:outputText value="#{bundle.ViewPerfilesLabel_soloLectura}"/>
+                    <h:outputText value="#{perfilesController.selected.soloLectura}" title="#{bundle.ViewPerfilesTitle_soloLectura}"/>
+                    <h:outputText value="#{bundle.ViewPerfilesLabel_usuario}"/>
+                    <h:outputText value="#{perfilesController.selected.usuario}" title="#{bundle.ViewPerfilesTitle_usuario}"/>
+                    <h:outputText value="#{bundle.ViewPerfilesLabel_fecha}"/>
+                    <h:outputText value="#{perfilesController.selected.fecha}" title="#{bundle.ViewPerfilesTitle_fecha}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewPerfilesLabel_idAplicacion}"/>
+                    <h:outputText value="#{perfilesController.selected.idAplicacion}" title="#{bundle.ViewPerfilesTitle_idAplicacion}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{perfilesController.destroyAndView}" value="#{bundle.ViewPerfilesDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewPerfilesEditLink}"/>
+                <br />
+                <h:commandLink action="#{perfilesController.prepareCreate}" value="#{bundle.ViewPerfilesCreateLink}" />
+                <br />
+                <h:commandLink action="#{perfilesController.prepareList}" value="#{bundle.ViewPerfilesShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewPerfilesIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

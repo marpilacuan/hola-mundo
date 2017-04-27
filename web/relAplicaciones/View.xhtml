@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewRelAplicacionesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewRelAplicacionesLabel_idRelApp}"/>
+                    <h:outputText value="#{relAplicacionesController.selected.idRelApp}" title="#{bundle.ViewRelAplicacionesTitle_idRelApp}"/>
+                    <h:outputText value="#{bundle.ViewRelAplicacionesLabel_estado}"/>
+                    <h:outputText value="#{relAplicacionesController.selected.estado}" title="#{bundle.ViewRelAplicacionesTitle_estado}"/>
+                    <h:outputText value="#{bundle.ViewRelAplicacionesLabel_fechaAcceso}"/>
+                    <h:outputText value="#{relAplicacionesController.selected.fechaAcceso}" title="#{bundle.ViewRelAplicacionesTitle_fechaAcceso}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewRelAplicacionesLabel_usuario}"/>
+                    <h:outputText value="#{relAplicacionesController.selected.usuario}" title="#{bundle.ViewRelAplicacionesTitle_usuario}"/>
+                    <h:outputText value="#{bundle.ViewRelAplicacionesLabel_idAplicacion}"/>
+                    <h:outputText value="#{relAplicacionesController.selected.idAplicacion}" title="#{bundle.ViewRelAplicacionesTitle_idAplicacion}"/>
+                    <h:outputText value="#{bundle.ViewRelAplicacionesLabel_idPerfil}"/>
+                    <h:outputText value="#{relAplicacionesController.selected.idPerfil}" title="#{bundle.ViewRelAplicacionesTitle_idPerfil}"/>
+                    <h:outputText value="#{bundle.ViewRelAplicacionesLabel_idUsuario}"/>
+                    <h:outputText value="#{relAplicacionesController.selected.idUsuario}" title="#{bundle.ViewRelAplicacionesTitle_idUsuario}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{relAplicacionesController.destroyAndView}" value="#{bundle.ViewRelAplicacionesDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewRelAplicacionesEditLink}"/>
+                <br />
+                <h:commandLink action="#{relAplicacionesController.prepareCreate}" value="#{bundle.ViewRelAplicacionesCreateLink}" />
+                <br />
+                <h:commandLink action="#{relAplicacionesController.prepareList}" value="#{bundle.ViewRelAplicacionesShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewRelAplicacionesIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
